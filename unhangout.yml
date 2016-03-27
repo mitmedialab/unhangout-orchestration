@@ -1,0 +1,53 @@
+# Configuration for a remote production instance
+---
+- hosts: unhangout
+  become: true
+  become_user: root
+  gather_facts: true
+  vars_files:
+    # Use ansible-vault to create vars/secrets.yml which defines all of the
+    # variables in this file which are prefixed by 'vault_'.
+    - vars/secrets.yml
+  roles:
+    - common
+    - swap
+    - nginx
+    - monitored
+    #- letsencrypt-dummy
+    - letsencrypt-nginx
+    - letsencrypt
+    - unhangout-common
+    - unhangout
+  vars:
+    # Main server hostname
+    domain: "unhangout.media.mit.edu"
+    # Server name nginx listens for for unhangout
+    unhangout_domain: "unhangout.media.mit.edu"
+    # Domain names to fetch SSL cert for
+    letsencrypt_domains:
+      - "unhangout.media.mit.edu"
+    # Main deployment username
+    main_user_name: "{{vault_main_user_name}}"
+    # sudo password for main deployment user
+    ansible_become_pass: "{{vault_ansible_become_pass}}"
+    # salt for main deployment user (allows idempotent shadow password setting)
+    main_user_salt: "{{vault_main_user_salt}}"
+    # public SSH keys for main deployment user, as a string
+    main_user_authorized_keys: "{{vault_main_user_authorized_keys}}"
+    # Email to alias root@server to
+    admin_email: "{{vault_admin_email}}"
+    # IP address of nagios server which will monitor this
+    monitoring_server_ip: "{{vault_monitoring_server_ip}}"
+    # Same IP, as a regex.
+    monitoring_server_ip_as_regex: "{{vault_monitoring_server_ip_as_regex}}"
+    # Unhangout app config
+    unhangout_google_client_id: "{{vault_unhangout_google_client_id}}"
+    unhangout_google_client_secret: "{{vault_unhangout_google_client_secret}}"
+    unhangout_hangout_app_id: "{{vault_unhangout_hangout_app_id}}"
+    unhangout_hangout_origin_regex: "{{vault_unhangout_hangout_origin_regex}}"
+    unhangout_session_secret: "{{vault_unhangout_session_secret}}"
+    unhangout_events_spreadsheet: "{{vault_unhangout_events_spreadsheet}}"
+    unhangout_server_email_address: "{{vault_unhangout_server_email_address}}"
+    unhangout_managers: "{{vault_unhangout_managers}}"
+    unhangout_superuser_emails: "{{vault_unhangout_superuser_emails}}"
+    unhangout_email_log_recipients: "{{vault_unhangout_email_log_recipients}}"

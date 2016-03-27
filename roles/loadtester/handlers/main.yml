@@ -1,0 +1,7 @@
+---
+- name: stop loadtester
+  service: name=loadtester state=stopped
+- name: start loadtester
+  service: name=loadtester state=started
+- name: restart loadtester
+  service: name=loadtester state=restarted

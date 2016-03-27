@@ -1,0 +1,34 @@
+{
+    "UNHANGOUT_GOOGLE_CLIENT_ID": "{{ unhangout_google_client_id }}",
+    "UNHANGOUT_GOOGLE_CLIENT_SECRET": "{{ unhangout_google_client_secret }}",
+    "UNHANGOUT_SESSION_SECRET": "{{ unhangout_session_secret }}",
+    "UNHANGOUT_EVENTS_SPREADSHEET": "{{ unhangout_events_spreadsheet }}",
+
+    "UNHANGOUT_PORT": {{ unhangout_port }},
+    "UNHANGOUT_HOST": "{{ unhangout_domain }}",
+
+    "UNHANGOUT_REDIS_HOST": "localhost",
+    "UNHANGOUT_REDIS_PORT": 6379,
+    "UNHANGOUT_REDIS_DB": 0,
+
+    "UNHANGOUT_SMTP": {
+        "host": "localhost",
+        "port": 25,
+        "secureConnection": false
+    },
+
+    "UNHANGOUT_SERVER_EMAIL_ADDRESS": "{{ unhangout_server_email_address }}",
+    "UNHANGOUT_MANAGERS": ["{{ unhangout_managers|join('", "') }}"],
+    "UNHANGOUT_SUPERUSER_EMAILS": ["{{ unhangout_superuser_emails|join('", "') }}"],
+
+    "UNHANGOUT_HANGOUT_APP_ID": "{{ unhangout_hangout_app_id }}",
+    "UNHANGOUT_HANGOUT_ORIGIN_REGEX": "{{ unhangout_hangout_origin_regex }}",
+
+    "UNHANGOUT_USE_SSL": false,
+    "UNHANGOUT_REDIRECT_HTTP": false,
+    "UNHANGOUT_PRIVATE_KEY": "",
+    "UNHANGOUT_CERTIFICATE": "",
+
+    "EMAIL_LOG_RECIPIENTS": ["{{ unhangout_email_log_recipients|join('", "') }}"]
+}
+

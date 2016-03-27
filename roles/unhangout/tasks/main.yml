@@ -1,0 +1,18 @@
+---
+- name: Upstart config
+  template: src=unhangout_init.conf dest=/etc/init/unhangout.conf
+  notify: restart unhangout
+  tags: unhangout
+
+- name: Nginx config
+  template: src=unhangout_nginx.conf dest=/etc/nginx/sites-available/unhangout_nginx.conf
+  notify: restart nginx
+  tags: unhangout
+
+- name: Enable nginx conf
+  file: >
+    state=link
+    src=/etc/nginx/sites-available/unhangout_nginx.conf
+    dest=/etc/nginx/sites-enabled/unhangout_nginx.conf
+  notify: restart nginx
+  tags: unhangout

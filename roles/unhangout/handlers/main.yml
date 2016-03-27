@@ -1,0 +1,7 @@
+---
+- name: stop unhangout
+  service: name=unhangout state=stopped
+- name: start unhangout
+  service: name=unhangout state=started
+- name: restart unhangout
+  service: name=unhangout state=restarted

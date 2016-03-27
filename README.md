@@ -1,7 +1,8 @@
 # Unhangout ansible automation
 
-This repository has ansible configurations to create an Unhangout server, load
-testers, and load balancing server.
+This repository contains work-in-progress ansible configurations to create
+multiple unhangout servers, load testers, and load balancing server, in order to
+support events in the several thousands of users.
 
 # Configuration
 

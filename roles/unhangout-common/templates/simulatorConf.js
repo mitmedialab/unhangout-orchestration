@@ -7,11 +7,11 @@ module.exports = {
         // multiple machines to load test the server, you may want to set each
         // one to a different subset of the range, so that you get different
         // users.
-        "USER_RANGE": [{{loadtester_user_range[0]}}, {{loadtester_user_range[1]}}],
+        "USER_RANGE": [{{loadtester_user_range_low}}, {{loadtester_user_range_high}}],
         // The range of sessions our users will attempt to join.  There may be
         // more sessions available on the server for users to join -- reducing
         // the range ensures that sessions fill up.
-        "SESSION_RANGE": [{{loadtester_session_range[0]}}, {{loadtester_session_range[1]}}],
+        "SESSION_RANGE": [{{loadtester_session_range_low}}, {{loadtester_session_range_high}}],
         // Disable sending of blur/focus socket traffic?
         "DISABLE_BLUR": false,
         // Disable sending of chat traffic?
@@ -38,9 +38,9 @@ module.exports = {
         // The ID of the event in which to generate sessions.
         "EVENT_ID": {{loadtester_event_id}},
         // The range of session IDs to generate. in that event.
-        "SESSION_RANGE": [{{loadtester_session_range[0]}}, {{loadtester_session_range[1]}}],
+        "SESSION_RANGE": [{{loadtester_session_range_low}}, {{loadtester_session_range_high}}],
         // The range of users to generate.
-        "USER_RANGE": [{{loadtester_user_range[0]}}, {{loadtester_user_range[1]}}],
+        "USER_RANGE": [{{loadtester_user_range_low}}, {{loadtester_user_range_high}}],
         // The REDIS DB to use when generating.  This should be the same as the
         // setting in conf'json's UNHANGOUT_REDIS_DB when load testing is in
         // progress.  The default production value is 0 and test DB is 1.

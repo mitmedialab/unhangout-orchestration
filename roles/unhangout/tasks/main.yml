@@ -16,3 +16,7 @@
     dest=/etc/nginx/sites-enabled/unhangout_nginx.conf
   notify: restart nginx
   tags: unhangout
+
+- name: Compile assets
+  command: /usr/local/bin/node {{unhangout_repo_dir}}/bin/compile-assets.js chdir={{unhangout_repo_dir}}
+  tags: unhangout

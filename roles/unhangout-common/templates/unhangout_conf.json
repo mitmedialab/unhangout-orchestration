@@ -29,6 +29,7 @@
     "UNHANGOUT_PRIVATE_KEY": "",
     "UNHANGOUT_CERTIFICATE": "",
 
-    "EMAIL_LOG_RECIPIENTS": ["{{ unhangout_email_log_recipients|join('", "') }}"]
+    "EMAIL_LOG_RECIPIENTS": ["{{ unhangout_email_log_recipients|join('", "') }}"],
+    "baseUrl": "https://{{unhangout_domain}}"
 }
 

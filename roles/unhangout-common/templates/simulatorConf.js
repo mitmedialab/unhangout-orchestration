@@ -2,7 +2,7 @@
 module.exports = {
     "CLIENT": {
         // The URL for the server we will be hammering.
-        "SERVER_URL": "{{unhangout_domain}}",
+        "SERVER_URL": "https://{{unhangout_domain}}",
         // The range of user IDs for this client to use.  If you're using
         // multiple machines to load test the server, you may want to set each
         // one to a different subset of the range, so that you get different

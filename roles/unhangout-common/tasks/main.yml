@@ -15,6 +15,7 @@
 
 - name: Copy unhangout code
   git: repo={{unhangout_repo_url}} dest={{unhangout_repo_dir}} accept_hostkey=True
+  register: register_unhangout_code
   notify: restart unhangout
   tags: unhangout
 
@@ -25,14 +26,12 @@
 
 - name: Copy load simulator conf file
   template: src=simulatorConf.js dest={{unhangout_repo_dir}}/simulatorConf.js
-  notify: restart loadtester
   tags: unhangout
 
 - name: Install node deps
   npm: path={{unhangout_repo_dir}}
   notify:
    - restart unhangout
-   - restart loadtester
   tags: unhangout
 
 - name: Permissions for node files

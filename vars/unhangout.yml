@@ -1,6 +1,4 @@
 ---
-# Server name nginx listens for for unhangout
-unhangout_domain: "{{domain}}"
 # Domain names to fetch SSL cert for
 letsencrypt_domains:
   - "{{domain}}"
@@ -29,10 +27,3 @@ unhangout_server_email_address: "{{vault_unhangout_server_email_address}}"
 unhangout_managers: "{{vault_unhangout_managers}}"
 unhangout_superuser_emails: "{{vault_unhangout_superuser_emails}}"
 unhangout_email_log_recipients: "{{vault_unhangout_email_log_recipients}}"
-# Loadtester config -- used for generating load test users.
-loadtester_user_range_low: 0
-loadtester_user_range_high: 1000
-loadtester_session_range_low: 0
-loadtester_session_range_high: 10
-loadtester_event_id: 1
-loadtester_redis_db_id: 0

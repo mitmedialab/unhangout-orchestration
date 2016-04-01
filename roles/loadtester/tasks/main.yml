@@ -1,5 +1,4 @@
 ---
 - name: Upstart config
   template: src=loadtester_init.conf dest=/etc/init/loadtester.conf
-  notify: restart loadtester
   tags: unhangout

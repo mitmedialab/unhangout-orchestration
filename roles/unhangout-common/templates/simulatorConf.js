@@ -21,7 +21,7 @@ module.exports = {
         // Disable session leaving?  (You can checkout any time you like, but...)
         "DISABLE_SESSION_LEAVING": false,
         // Disable leaving the event?
-        "DISABLE_EVENT_LEAVING": false,
+        "DISABLE_EVENT_LEAVING": true,
         // The ID for the event on the server which contains the load simulator
         // sessions, generated with ``bin/prepare-load-simulator-data.js``.
         "EVENT_ID": {{loadtester_event_id}},

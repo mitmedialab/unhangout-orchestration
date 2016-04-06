@@ -1,0 +1,20 @@
+---
+- hosts: balancer
+  become: true
+  become_user: root
+  gather_facts: true
+  vars_files:
+    - vars/secrets.yml
+    - vars/unhangout.yml
+  roles:
+    - common
+    - nginx
+    - letsencrypt-nginx
+    - letsencrypt
+    - balancer
+  vars:
+    balancer_haproxy_port: 8080
+    balancer_backends:
+     - {name: "un1", domain: "un1.unhangout.io"}
+     - {name: "un2", domain: "un2.unhangout.io"}
+     - {name: "un3", domain: "un3.unhangout.io"}

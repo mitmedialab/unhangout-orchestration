@@ -12,7 +12,6 @@
   roles:
     - common
     - nginx
-    #- letsencrypt-dummy
     - letsencrypt-nginx
     - letsencrypt
     - unhangout-common

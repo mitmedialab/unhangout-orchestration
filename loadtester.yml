@@ -6,6 +6,7 @@
   vars_files:
     - vars/secrets.yml
     - vars/unhangout.yml
+    - vars/loadtester.yml
   roles:
     - common
     - swap

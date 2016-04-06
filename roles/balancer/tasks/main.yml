@@ -1,0 +1,28 @@
+---
+- name: Add haproxy ppa
+  apt_repository: repo='ppa:vbernat/haproxy-1.6'
+  tags: unhangout
+
+- name: Install packages
+  apt: pkg={{item}} state=installed
+  with_items:
+   - haproxy
+  tags: unhangout
+
+- name: Add nginx config
+  template: src=balancer_nginx.conf dest=/etc/nginx/sites-available/balancer.conf
+  notify: restart nginx
+  tags: unhangout
+
+- name: Enable nginx conf
+  file: >
+    src=/etc/nginx/sites-available/balancer.conf
+    dest=/etc/nginx/sites-enabled/balancer.conf
+    state=link
+  notify: restart nginx
+  tags: unhangout
+
+- name: Add haproxy config
+  template: src=balancer_haproxy.cfg dest=/etc/haproxy/haproxy.cfg
+  notify: restart haproxy
+  tags: unhangout

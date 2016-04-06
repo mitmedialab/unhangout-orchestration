@@ -30,6 +30,6 @@
     "UNHANGOUT_CERTIFICATE": "",
 
     "EMAIL_LOG_RECIPIENTS": ["{{ unhangout_email_log_recipients|join('", "') }}"],
+    "ALT_AUTH_CALLBACK_DOMAIN": "https://{{domain}}",
     "baseUrl": "https://{{unhangout_domain}}"
 }
-

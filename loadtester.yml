@@ -7,6 +7,8 @@
     - vars/secrets.yml
     - vars/unhangout.yml
     - vars/loadtester.yml
+  vars:
+    domain: "ec2-{{ansible_eth0['ipv4']['address']|replace('.', '-')}}.{{ec2_domain_suffix}}"
   roles:
     - common
     - swap

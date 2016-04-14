@@ -27,3 +27,18 @@
   register: create_load_tester
   changed_when: '"Creating" in create_load_tester.stdout'
   tags: unhangout
+
+- name: Copy unhangout event settings fixture
+  template: src=create_event.js dest={{unhangout_repo_dir}}/create_event.js
+  tags:
+   - unhangoutfixture
+   - unhangout
+
+- name: Create unhangut event
+  command: /usr/local/bin/node {{unhangout_repo_dir}}/create_event.js
+  register: unhangout_fixture
+  changed_when: '"changed" in unhangout_fixture.stdout'
+  notify: restart unhangout
+  tags:
+   - unhangoutfixture
+   - unhangout

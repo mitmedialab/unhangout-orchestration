@@ -13,13 +13,13 @@ module.exports = {
         // the range ensures that sessions fill up.
         "SESSION_RANGE": [{{loadtester_session_range_low}}, {{loadtester_session_range_high}}],
         // Disable sending of blur/focus socket traffic?
-        "DISABLE_BLUR": false,
+        "DISABLE_BLUR": true,
         // Disable sending of chat traffic?
         "DISABLE_CHAT": false,
         // Disable session joining and leaving? (If you can't join, you can't leave).
         "DISABLE_SESSION_JOINING": false,
         // Disable session leaving?  (You can checkout any time you like, but...)
-        "DISABLE_SESSION_LEAVING": false,
+        "DISABLE_SESSION_LEAVING": true,
         // Disable leaving the event?
         "DISABLE_EVENT_LEAVING": true,
         // The ID for the event on the server which contains the load simulator

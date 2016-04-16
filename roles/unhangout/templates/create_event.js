@@ -5,7 +5,7 @@ var UnhangoutDb = require("./lib/unhangout-db");
 var Promise = require("bluebird");
 var options = require("./lib/options");
 
-var DETAILS = {
+var EVENT_DETAILS = {
   id: {{unhangout_event.id}},
   title: "{{unhangout_event.title}}",
   shortName: "{{unhangout_event.shortName}}",
@@ -21,7 +21,15 @@ var DETAILS = {
     {'email': "{{admin}}"},
   {% endfor %}
   ]
+};
+
+var USER_DETAILS = {
+  id: "{{unhangout_farmer.id}}",
+  displayName: "{{unhangout_farmer.displayName}}",
+  emails: [{value: "{{unhangout_farmer.email}}"}],
+  perms: {"farmHangouts": true},
 }
+
 
 function main() {
   return new Promise(function(resolve, reject) {
@@ -32,21 +40,36 @@ function main() {
     });
   }).then(function(db) {
     // Fetch existing event.
-    var event = db.events.findWhere({shortName: DETAILS.shortName});
+    var event = db.events.findWhere({shortName: EVENT_DETAILS.shortName});
     if (!event) {
       event = new models.ServerEvent();
     }
     // Set event details
-    event.set(DETAILS);
-    if (!event.hasChanged()) {
-      return false;
-    }
-    // Save
+    event.set(EVENT_DETAILS);
     return new Promise(function(resolve, reject) {
+      if (!event.hasChanged()) {
+        return resolve(false);
+      }
       event.save({}, {
         success: function() { resolve(true); },
         error: reject
       });
+    }).then(function(changed) {
+      var user = db.users.findWhere({id: USER_DETAILS.id});
+      if (!user) {
+        user = new models.ServerUser();
+      }
+      user.set(USER_DETAILS)
+      if (user.hasChanged()) {
+        return new Promise(function(resolve, reject) {
+          user.save({}, {
+            success: function() { resolve(true); },
+            error: reject
+          });
+        });
+      } else {
+        return changed;
+      }
     });
   }).then(function(changed) {
     if (changed) {

@@ -21,11 +21,8 @@
       iframeEmbedCode: ""
       dateAndTime: "2016-04-22T14:00:00Z"
       timeZoneValue: "America/New_York"
-      admins:
-       - "chazen@gmail.com"
-       - "phi.schmidt@gmail.com"
-       - "srishakatux@gmail.com"
-       - "katherine.mcconachie@gmail.com"
+      admins: "{{vault_unhangout_admins}}"
+    unhangout_farmer: "{{vault_unhangout_farmer}}"
  
   roles:
     - common

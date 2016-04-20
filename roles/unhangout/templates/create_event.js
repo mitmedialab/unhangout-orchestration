@@ -11,9 +11,10 @@ var EVENT_DETAILS = {
   shortName: "{{unhangout_event.shortName}}",
   organizer: "{{unhangout_event.organizer}}",
   description: "{{unhangout_event.description|e}}",
+  whiteboard: {message: "{{unhangout_event.whiteboardMessage}}"},
   open: {{unhangout_event.open}},
   sessionsOpen: {{unhangout_event.sessionsOpen}},
-  iframeEmbedCode: "{{unhangout_event.iframeEmbedCode}}",
+  iframeEmbedCode: '{{unhangout_event.iframeEmbedCode}}',
   dateAndTime: "{{unhangout_event.dateAndTime}}",
   timeZoneValue: "{{unhangout_event.timeZoneValue}}",
   admins: [

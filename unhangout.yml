@@ -16,9 +16,10 @@
       shortName: "ulab"
       organizer: "MITx u.lab"
       description: "During this u.lab live session, we will experiment with an MIT Media Lab technology called “Unhangout”, which we hope will make the session as dynamic and interactive as an in-person gathering. If you join as an individual (meaning you’re physically next to other participants while you watch), you will have the option to join small group virtual breakout sessions where you will meet and dialogue with 4 or 5 other participants.\\n\\nThe main focus of the live session will be to learn together what’s been happening in the u.lab ecosystem since we last connected in December.\\n\\nWe look forward to seeing you on Friday, April 22nd and 10am ET!"
-      open: "false"
+      whiteboardMessage: "Welcome to the u.lab live session! Use the chat window below to introduce yourself, post reflections, and ask questions during the session."
+      open: "true"
       sessionsOpen: "false"
-      iframeEmbedCode: '<iframe id="ls_embed_1460650532" src="//livestream.com/accounts/2261474/events/5196957/player?width=640&height=360&autoPlay=true&mute=false" width="640" height="360" frameborder="0" scrolling="no">'
+      iframeEmbedCode: '<iframe id="ls_embed_1460650532" src="//livestream.com/accounts/2261474/events/5196957/player?width=640&height=360&autoPlay=true&mute=false" width="640" height="360" frameborder="0" scrolling="no"></iframe>'
       dateAndTime: "2016-04-22T14:00:00Z"
       timeZoneValue: "America/New_York"
       admins: "{{vault_unhangout_admins}}"

@@ -30,3 +30,8 @@
   template: src=balancer_haproxy.cfg dest=/etc/haproxy/haproxy.cfg
   notify: restart haproxy
   tags: unhangout
+
+- name: Add 503 template
+  template: src=503.http dest=/etc/haproxy/errors/503.http
+  notify: restart haproxy
+  tags: unhangout

@@ -8,6 +8,7 @@ module.exports = {
         // one to a different subset of the range, so that you get different
         // users.
         "USER_RANGE": [{{loadtester_user_range_low}}, {{loadtester_user_range_high}}],
+        "SESSION_MODE": "randomized",
         // The range of sessions our users will attempt to join.  There may be
         // more sessions available on the server for users to join -- reducing
         // the range ensures that sessions fill up.
@@ -37,6 +38,7 @@ module.exports = {
     "SERVER": {
         // The ID of the event in which to generate sessions.
         "EVENT_ID": {{loadtester_event_id}},
+        "SESSION_MODE": "randomized",
         // The range of session IDs to generate. in that event.
         "SESSION_RANGE": [{{loadtester_session_range_low}}, {{loadtester_session_range_high}}],
         // The range of users to generate.

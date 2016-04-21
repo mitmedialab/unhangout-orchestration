@@ -11,6 +11,9 @@ PLAYBOOK = ansible-playbook -i hosts.cfg $(VAULT) $(TAGS)
 unhangout:
 	$(PLAYBOOK) unhangout.yml
 
+unhangout-restart:
+	$(PLAYBOOK) unhangout-restart.yml
+
 loadtester:
 	$(PLAYBOOK) loadtester.yml
 loadtester-stop:

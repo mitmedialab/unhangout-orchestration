@@ -14,7 +14,7 @@
   tags: unhangout
 
 - name: Copy unhangout code
-  git: repo={{unhangout_repo_url}} dest={{unhangout_repo_dir}} accept_hostkey=True
+  git: repo={{unhangout_repo_url}} dest={{unhangout_repo_dir}} accept_hostkey=True version="{{unhangout_branch}}"
   register: register_unhangout_code
   notify: restart unhangout
   tags: unhangout

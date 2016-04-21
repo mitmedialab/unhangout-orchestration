@@ -2,6 +2,7 @@
 unhangout_domain: "{{domain}}"
 unhangout_repo_url: "https://github.com/unhangout/unhangout.git"
 unhangout_repo_dir: "/var/local/unhangout"
+unhangout_branch: "master"
 unhangout_port: 9000
 # Loadtester config -- used for generating load test users.
 loadtester_user_range_low: 0

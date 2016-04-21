@@ -14,7 +14,7 @@
     - balancer
   vars:
     balancer_haproxy_port: 8080
-    balancer_maxconn: 250
+    balancer_maxconn: 230
     balancer_backends:
      - {name: "un1", domain: "un1.unhangout.io"}
      - {name: "un2", domain: "un2.unhangout.io"}

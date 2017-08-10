@@ -1,3 +1,9 @@
+# Retired
+
+This code was written to provision a cluster of servers running an older version of Unhangout that is no longer maintained.  It is unlikely to be of any value without significant modification.
+
+--------
+
 # Unhangout ansible automation
 
 This repository contains work-in-progress ansible configurations to create
